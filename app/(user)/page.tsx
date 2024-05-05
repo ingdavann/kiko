@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import HeroImage from "@/public/assets/image/commerce.png";
+import HeroImage from "@/public/assets/image/rice.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -11,6 +11,21 @@ export default function Home() {
   }, [])
   return (
     <main className="w-[90%] mx-auto">
+      {/* <!-- hero seciton --> */}
+      <section className="relative w-full h-[320px]" id="home">
+                <div className="absolute inset-0 opacity-70">
+                    <img src="https://image1.jdomni.in/banner/13062021/0A/52/CC/1AF5FC422867D96E06C4B7BD69_1623557926542.png" alt="Background Image" className="object-cover object-center w-full h-full" />
+                </div>
+                <div className="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
+                    <div className="md:w-1/2 mb-4 md:mb-0">
+                        <h1 className="text-grey-700 font-medium text-4xl md:text-5xl leading-tight mb-2">KIKO Flour Mill</h1>
+                        <p className="font-regular text-xl mb-8 mt-4">One stop solution for flour grinding services</p>
+                        <a href="#contactUs"
+                            className="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858]  transition duration-200">Contact
+                            Us</a>
+                    </div>
+                </div>
+      </section>
       <section className="relative overflow-hidden">
         <div className="flex relative z-20 items-center overflow-hidden">
           <div className="container mx-auto px-6 flex relative py-16 flex-col sm:flex-row">
@@ -32,10 +47,10 @@ export default function Home() {
                 Dimension of reality that makes change possible and understandable. An indefinite and homogeneous environment in which natural events and human existence take place.
               </p>
               <div className="flex mt-8">
-                <a href="#" className="uppercase py-2 px-4 rounded-lg bg-pink-500 border-2 border-transparent text-white text-md mr-4 hover:bg-pink-400">
+                <a href="#" className="uppercase py-2 px-4 rounded-lg bg-[#c8a876] border-2 border-transparent text-white text-md mr-4 hover:bg-[#c09858]">
                   Get started
                 </a>
-                <a href="#" className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-pink-500 text-pink-500 dark:text-white hover:bg-pink-500 hover:text-white text-md">
+                <a href="#" className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-[#c8a876] text-[#c8a876] dark:text-white hover:bg-[#c09858] hover:text-white text-md">
                   Read more
                 </a>
               </div>

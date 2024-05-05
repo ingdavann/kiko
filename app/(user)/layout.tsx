@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import "@/app/globals.css";
 import NavbarComponent from "@/components/navbar/NavbarComponent";
 import {Inter} from "next/font/google"
+import Footer from "@/components/footer/FooterComponent";
 
 export const metadata: Metadata = {
   title: "KIKO",
@@ -26,6 +27,7 @@ export default function UserLayout({
         <NavbarComponent/>
       </header>
         {children}
+      <Footer/>
     </body>
   );
 }

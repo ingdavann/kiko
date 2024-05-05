@@ -1,4 +1,3 @@
-
 "use client";
 import { Avatar, Dropdown, Navbar, NavbarLink } from "flowbite-react";
 import logo from "@/public/assets/image/icon.png";
@@ -15,7 +14,6 @@ type MenuItem = {
 
 export default function NavbarComponent() {
   const [menu, setMenu] = useState<MenuItem[]>(MenuList);
-
   // handle update menu items on active
   const updateMenu = (path: string) => {
     const newMenu = MenuList.map((item) => {
