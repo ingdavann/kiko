@@ -1,9 +1,39 @@
 
 "use client";
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { Avatar, Dropdown, Navbar, NavbarLink } from "flowbite-react";
 import logo from "@/public/assets/image/icon.png";
 import Image from "next/image";
+import { useState } from "react";
+import { MenuList } from "./menu";
+import Link from "next/link";
+
+type MenuItem = {
+  name: string;
+  path: string;
+  active: boolean;
+}
+
 export default function NavbarComponent() {
+  const [menu, setMenu] = useState<MenuItem[]>(MenuList);
+
+  // handle update menu items on active
+  const updateMenu = (path: string) => {
+    const newMenu = MenuList.map((item) => {
+      if (path === item.path) {
+        return {
+          ...item,
+          active: true 
+        };
+      }
+      else{
+        return {
+          ...item,
+          active: false
+        };
+      }
+    });
+    setMenu(newMenu);
+  };
   return (
     <Navbar fluid rounded className="bg-gray-50 p-4 w-[90%] mx-auto">
       <Navbar.Brand href="#">
@@ -31,13 +61,13 @@ export default function NavbarComponent() {
         <Navbar.Toggle/>
       </div>
       <Navbar.Collapse >
-        <Navbar.Link href="#" active  className="bg-gray-300">
-          Home
-        </Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
+      {
+          menu.map((item, index) => (
+            <NavbarLink key={index} onClick={()=>updateMenu(item.path)} as={Link} href={item.path} active={item.active}>
+              {item.name}
+            </NavbarLink>
+          ))
+        }
       </Navbar.Collapse>
     </Navbar>
   );

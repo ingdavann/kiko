@@ -53,7 +53,7 @@ export default function Home() {
       {/* partner section */}
       <section className="mb-5" data-aos="fade-up">
         <h2 className="text-3xl text-center font-bold">Out Partner</h2>
-        <div className="grid grid-cols-6 mt-5 bg-gray-50 p-5 rounded-xl" > 
+        <div className="grid grid-cols-6 mt-5 bg-gray-50 p-5 rounded-xl"> 
        
           <div className="inline-flex flex-col items-center justify-center px-5">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/640px-Tesla_Motors.svg.png" alt="partner" className="md:h-12" />
