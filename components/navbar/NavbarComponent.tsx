@@ -20,10 +20,10 @@ export default function NavbarComponent() {
       if (path === item.path) {
         return {
           ...item,
-          active: true 
+          active: true
         };
       }
-      else{
+      else {
         return {
           ...item,
           active: false
@@ -35,10 +35,21 @@ export default function NavbarComponent() {
   return (
     <Navbar fluid rounded className="bg-gray-50 p-4 w-[90%] mx-auto">
       <Navbar.Brand href="#">
-        <Image src={logo}  width={60} height={60} className="mr-3 h-6 sm:h-9" alt="Logo" />
+        <Image src={logo} width={60} height={60} className="mr-3 h-6 sm:h-9" alt="Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">KIKO</span>
       </Navbar.Brand>
+
       <div className="flex md:order-2">
+        <div className="flex justify-center items-center mr-5">
+          <div className="relative">
+            <div className="t-0 absolute left-3">
+              <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">3</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="file: mt-2 h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+            </svg>
+          </div>
+        </div>
         <Dropdown
           arrowIcon={false}
           inline
@@ -50,18 +61,15 @@ export default function NavbarComponent() {
             <span className="block text-sm">Bonnie Green</span>
             <span className="block truncate text-sm font-medium">name@flowbite.com</span>
           </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Item>Sign out</Dropdown.Item>
         </Dropdown>
         <Navbar.Toggle/>
       </div>
-      <Navbar.Collapse >
-      {
+      <Navbar.Collapse>
+        {
           menu.map((item, index) => (
-            <NavbarLink key={index} onClick={()=>updateMenu(item.path)} as={Link} href={item.path} active={item.active}>
+            <NavbarLink key={index} onClick={() => updateMenu(item.path)} as={Link} href={item.path} active={item.active}>
               {item.name}
             </NavbarLink>
           ))
