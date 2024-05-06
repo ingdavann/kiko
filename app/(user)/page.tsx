@@ -8,12 +8,16 @@ import ProductCardComponent from "@/components/card/ProductCardComponent";
 import { BASE_URL } from "@/lib/constants";
 import { CartProductType } from "@/lib/definitions";
 import Link from "next/link";
+import { useAppSelector } from "@/redux/hooks";
+import { useRouter } from "next/navigation";
 
 const ENDPOINT = `${BASE_URL}/api/products/?page=1&page_size=12`;
 const session = "some session";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+  const router = useRouter(); 
+  const state = useAppSelector((state) => state.cart.products);
   // error.tsx will be replaced rerendered if session is null
   if(!session) {
     throw new Error("Auth is required to access this resource")
@@ -117,6 +121,9 @@ export default function Home() {
               name={product.name}
               image={product.image}
               price={product.price}
+              description={product.description}
+              category={product.category}
+              quantity={product.quantity}
             />
             </Link>
           ))

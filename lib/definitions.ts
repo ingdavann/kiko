@@ -12,5 +12,8 @@ export type CartProductType = {
     name: string;
     image: string;
     price: number;
+    description: string;
+    quantity: number;
+    category: string;
     onClick?: () => void;
 }

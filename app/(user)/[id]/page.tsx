@@ -3,6 +3,7 @@ import ProductCardDetailComponent from "@/components/card/ProductCardDetailCompo
 import { BASE_URL } from "@/lib/constants";
 import { Metadata, ResolvingMetadata } from "next";
 
+
 type Props = {
     params: {id: string};
     searchParams: {[key: string]: string | string[] | undefined};

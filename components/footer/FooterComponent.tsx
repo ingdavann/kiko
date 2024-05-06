@@ -2,7 +2,8 @@
 import { MenuList } from "@/components/navbar/menu";
 import Link from 'next/link';
 import { useState } from "react";
-
+import logo from "@/public/assets/image/logo.png";
+import Image from "next/image";
 
 type MenuItem = {
     name: string;
@@ -38,9 +39,10 @@ export default function Footer() {
                 {/* <!--Grid--> */}
                 <div className="grid grid-cols-12 gap-8 py-14 lg:grid-cols-8">
                     <div className="mb-0 col-span-full lg:col-span-3 ">
-                        <a href="#" className="flex justify-center lg:justify-start">
-                            <img src="https://www.bigbasket.com/media/uploads/p/l/279849_8-24-mantra-organic-flour-rice.jpg" alt="logo" className='w-12 h-12' />
-                        </a>
+                        <Link href="/" className="flex justify-center lg:justify-start items-center">
+                            <Image src={logo} height={50} alt="logo"/>
+                            <h4 className="text-lg font-bold text-gray-600 ml-3">KIKO</h4>
+                        </Link>
                         <p className="py-8  text-gray-500 lg:max-w-xs text-center lg:text-left">Trusted in more than 100 countries & 5 million customers. Follow us on social media.</p>
                         <div className="flex mt-4 space-x-4 justify-center lg:justify-start sm:mt-0 ">
                             <a href="javascript:;" className="w-8 h-8 rounded-full transition-all duration-500 flex justify-center items-center bg-[#33CCFF] hover:bg-gray-900">
